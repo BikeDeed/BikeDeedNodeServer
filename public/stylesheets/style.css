@@ -15,8 +15,32 @@ a {
    display: grid;
    height: 100%;
   }
+
+  .imgbox-small {
+   display: grid;
+   height: 100%;
+  }
+
   .center-fit {
-   max-width: 100%;
-   max-height: 100vh;
+   max-width: 80%;
+   max-height: 80vh;
    margin: auto;
+  }
+
+  .center-fit-small {
+   max-width: 20%;
+   max-height: 20vh;
+   margin: auto;
+  }
+
+  .left-fit {
+   max-width: 60%;
+   max-height: 60vh;
+   margin-left: 0px;
+  }
+
+  .left-fit-small {
+   max-width: 20%;
+   max-height: 20vh;
+   margin-left: 0px;
   }
