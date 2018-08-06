@@ -1,25 +1,39 @@
-
-
+<style>
+img {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 150px; /* Set a small width */
+}
+.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40em
+}
+</style>
+<div class="blocktext">
+  <hr/>
 {{#each bikes}}
-
-  <div class="imgbox-small">
-    <a href="/bikes?deedid={{this.id}}">
-      <img src={{this.bikeUrl}} alt="{{this.name}}" class="left-fit-small">
-    </a>
-  </div>
   Deed Id: <a href="/bikes?deedid={{this.id}}">{{this.id}}</a>
   <p>
   Manufacturer: {{this.manufacturer}}
   <p>
   SerialNumber: {{this.serialNumber}}
   <p>
+  Owner: <a href="https://etherscan.io/address/{{this.owner}}">{{this.owner}}</a>
+  <p>
+  Proof Of Ownership
+  <p>
+  <a href="/bikes?deedid={{this.id}}">
+    <img src={{this.bikeUrl}} alt="{{this.name}}"/>
+  </a>
+  <p>
   IPFS Hash: <a href="{{this.bikeUrl}}">{{this.ipfsHash}}</a>
   <p>
   Date Created: {{this.dateCreated}}
-  <p>
-  Owner Address: <a href="https://etherscan.io/address/{{this.owner}}">{{this.owner}}</a>
   <p>
   <hr/>
 {{else}}
   <p class="empty">No Bikes!!!</p>
 {{/each}}
+</div>

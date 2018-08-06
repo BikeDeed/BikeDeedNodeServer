@@ -10,8 +10,15 @@ router.get('/', async function(req, res, next) {
       pageTestScript: '/qa/tests-bikes.js' });
   }
   else {
-    res.render('bike', { bike: await bikes.getBike(deedid),
-      pageTestScript: '/qa/tests-bikes.js' });
+    var format = req.query.format;
+    if (!format) {
+      res.render('bike', { bike: await bikes.getBike(deedid),
+        pageTestScript: '/qa/tests-bikes.js' });
+    }
+    else {
+      res.render('bike', { bike: await bikes.getBike(deedid),
+        layout: 'qrscan', pageTestScript: '/qa/tests-bikes.js' });
+    }
   }
 });
 

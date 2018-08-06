@@ -26,7 +26,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 [v-cloak]::before { content: "loading..."; }
 </style>
 <body class="w3-black">
-    {{> header }}
+  <header class="w3-container w3-padding-small w3-center w3-black">
+    <h1 class="w3-jumbo"><a href="https://bikedeed.io/"><i class="fa fa-bicycle"></i></a></h1>
+  </header>
     <div class="w3-content w3-text-grey w3-padding-small">
     {{{body}}}
     </div>

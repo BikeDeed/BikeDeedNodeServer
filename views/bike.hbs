@@ -1,15 +1,33 @@
+<style>
+img {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 4px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 300px; /* Set a small width */
+}
+.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40em
+}
+</style>
+<div class="blocktext">
 Deed Id: <a href="/bikes?deedid={{bike.id}}">{{bike.id}}</a>
 <p>
 Manufacturer: {{bike.manufacturer}}
 <p>
 SerialNumber: {{bike.serialNumber}}
 <p>
+Owner: <a href="https://etherscan.io/address/{{bike.owner}}">{{bike.owner}}</a>
+<p>
+Proof Of Ownership
+<p>
+<a href="/bikes?deedid={{bike.id}}">
+  <img src={{bike.bikeUrl}} alt="{{bike.name}}">
+</a>
+<p>
 IPFS Hash: <a href="{{bike.bikeUrl}}">{{bike.ipfsHash}}</a>
 <p>
 Date Created: {{bike.dateCreated}}
-<p>
-Owner Address: <a href="https://etherscan.io/address/{{bike.owner}}">{{bike.owner}}</a>
-<p>
-<div class="imgbox">
-  <img src={{bike.bikeUrl}} alt="{{bike.name}}" class="left-fit">
+<hr/>
 </div>
