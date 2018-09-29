@@ -3,8 +3,9 @@ var router = express.Router();
 var bikes = require('../lib/bikes.js');
 
 /* GET bikes page. */
-router.get('/', async function(req, res, next) {
-  var deedid = req.query.deedid;
+router.get('/:deedid', async function(req, res, next) {
+  var deedid = req.params.deedid;
+  console.log("deedid: " + deedid);
   if (deedid == '' || deedid === undefined) {
     res.render('bikes', { bikes: await bikes.getBikes(),
       pageTestScript: '/qa/tests-bikes.js' });

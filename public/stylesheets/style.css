@@ -1,10 +1,31 @@
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+a img {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 8px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 150px; /* Set a small width */
+}
+
+.bikeImage {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 8px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 100px; /* Set a small width */
+}
+
+.qrcode {
+    border: 1px solid #ddd; /* Gray border */
+    border-radius: 8px;  /* Rounded border */
+    padding: 5px; /* Some padding */
+    width: 100px; /* Set a small width */
 }
 
   * {
