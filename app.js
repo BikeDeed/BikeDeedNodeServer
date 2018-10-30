@@ -7,6 +7,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
 
+var walletRouter = require('./routes/wallet');
 var bikesRouter = require('./routes/bikes');
 var indexRouter = require('./routes/index');
 
@@ -28,6 +29,7 @@ app.use(function(req, res, next){
   next();
 });
 
+app.use('/wallet', walletRouter);
 app.use('/bikes', bikesRouter);
 app.use('/', indexRouter);
 

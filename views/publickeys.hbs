@@ -1,0 +1,10 @@
+<div class="modal-wrapper">
+  <div class="modal-container">
+    <h3 slot="modal-header">Public Keys</h3>
+    <span slot="modal-body">
+      {{#each publicKeys}}
+        <p>Public Key: {{ this }}</p>
+      {{/each}}
+    </span>
+  </div>
+</div>
