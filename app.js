@@ -13,6 +13,23 @@ var indexRouter = require('./routes/index');
 
 var app = express();
 
+let contractAddress;
+let web3Provider;
+switch(app.get('env')) {
+  case 'production':
+    contractAddress = '0xa7aB6FcA68f407BB5258556af221dE9d8D1A94B5';
+    web3Provider = 'https://mainnet.infura.io/uHJFDlXprJ52gu4uK9oA';
+    break;
+  case 'development':
+  default:
+    contractAddress = '0x83f306d638daeedc8895ba5ae6dc6e173195e056';
+    web3Provider = 'https://ropsten.infura.io/uHJFDlXprJ52gu4uK9oA';
+    break;
+}
+
+app.set('contractAddress', contractAddress);
+app.set('web3Provider', web3Provider);
+
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));

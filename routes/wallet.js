@@ -5,6 +5,8 @@ var wallet = require('../lib/hdwallet.js');
 /* GET wallet page. */
 router.get('/', async function(req, res, next) {
   let action = req.query.action;
+  wallet.setContractAddress(req.app.get('contractAddress'));
+  wallet.setWeb3Provider(req.app.get('web3Provider'));
 
   console.log("action: " + action);
   if (action == '' || action === undefined){
