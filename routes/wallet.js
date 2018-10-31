@@ -7,6 +7,7 @@ router.get('/', async function(req, res, next) {
   let action = req.query.action;
   wallet.setContractAddress(req.app.get('contractAddress'));
   wallet.setWeb3Provider(req.app.get('web3Provider'));
+  wallet.setExtendedPrivateKey(req.app.get('extendedPrivateKey'));
 
   console.log("action: " + action);
   if (action == '' || action === undefined){

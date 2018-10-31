@@ -15,6 +15,11 @@ var app = express();
 
 let contractAddress;
 let web3Provider;
+let extendedPrivateKey = process.env.EXTENDED_PRIVATE_KEY;
+
+console.log("ENV: " + app.get('env'));
+console.log("EXTENDED_PRIVATE_KEY: " + extendedPrivateKey);
+
 switch(app.get('env')) {
   case 'production':
     contractAddress = '0xa7aB6FcA68f407BB5258556af221dE9d8D1A94B5';
@@ -29,6 +34,7 @@ switch(app.get('env')) {
 
 app.set('contractAddress', contractAddress);
 app.set('web3Provider', web3Provider);
+app.set('extendedPrivateKey', extendedPrivateKey);
 
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));

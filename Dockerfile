@@ -22,7 +22,6 @@ COPY ./views /src/views
 COPY ./build /src/build
 COPY ./bikemanufacturers.json /src/bikemanufacturers.json
 
-
 ## Set environment to "development" by default
 ENV NODE_ENV development
 
